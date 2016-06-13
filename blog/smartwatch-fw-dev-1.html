@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>MabezDev</title>
+		<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+		<link href = "../css/bootstrap.min.css" rel="stylesheet">
+		<link href = "../css/styles.min.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="js/bootstrap.js" type="text/javascript"></script>
+
+		<div class = "navbar navbar-inverse navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../index.html">MabezDev</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href ="#">Blog</a></li>
+						<li><a href ="#">Portfolio</a></li>
+						<li class="dropdown">
+							<a href = "#" class="dropdown-toggle" data-toggle="dropdown">Social Media <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="mailto:mabez123@gmail.com">Email</a></li>
+								<li><a href="https://github.com/MabezDev?tab=repositories">Github</a></li>
+							</ul>
+
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="container">
+			<div class="row">
+				<div class = "col-lg-9">
+					<div id="box1" class="span4">
+					  <div class="panel panel-default">
+						<div class="panel-heading">
+							<h1 class="panel-title">The need for more power<small> Written on 17/04/16</small></h1>
+						</div>
+						<div class="panel-body">
+              <h2>Current issues</h2>
+              <p>So far the project is progressing well, I have laid the ground works for notification reception on the smartwatch but I have few problems with the current setup: </p>
+              <ul>
+                <li>RAM, the arduino nano only has 2KB of SRAM, storing large text notifications will quickly use all out precious RAM</li>
+                <li>Serial buffer issues, arduino missing data with software serial</li>
+                <li>Runs on 5 volts where all our other devices use 3.3v (Not a huge deal as we could switch to a 3.3 nano or pro mini)</li>
+              </ul>
+
+              <h2>The solution</h2>
+              <p>A arduino compatible board with more RAM and multiple dedicated Serial ports was the solution. I went with the Teensy LC due to its great compatibility with arduino software and it's low cost to power ratio.
+                 This board packs a 32 bit Cortex M0+ running at 48Mhz. So I bought two boards, one for development and one for the final smartwatch, the switch over was very easy,
+                 downloading the teensyduino software and selecting teensy LC from the board list in the arduino IDE I had it up and running like on the arduino nano.
+              <p/>
+              <p>
+                Once I got it running I used one of the 3 hardware serial ports and wired up my HC-06. I opened up a bluetooth terminal app I got fromt eh playstore and started spamming long messages.
+								It worked flawlessly, now onto the android app...
+              </p>
+              <p>You view the firmware code <a href="https://github.com/MabezDev/MabezWatchOS">here</a></p>
+						</div>
+					  </div>
+						</div>
+
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+
+
+</html>
